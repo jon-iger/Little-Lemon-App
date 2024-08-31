@@ -19,6 +19,8 @@
 		D4EFABA42C82E3A9009A6FF9 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFABA32C82E3A9009A6FF9 /* MenuList.swift */; };
 		D4EFABA62C82E405009A6FF9 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFABA52C82E405009A6FF9 /* MenuItem.swift */; };
 		D4EFABA92C82E8A2009A6FF9 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4EFABA72C82E8A2009A6FF9 /* ExampleDatabase.xcdatamodeld */; };
+		D4EFABAB2C831B93009A6FF9 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFABAA2C831B93009A6FF9 /* Hero.swift */; };
+		D4EFABAD2C831EA4009A6FF9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFABAC2C831EA4009A6FF9 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		D4EFABA32C82E3A9009A6FF9 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		D4EFABA52C82E405009A6FF9 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		D4EFABA82C82E8A2009A6FF9 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
+		D4EFABAA2C831B93009A6FF9 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		D4EFABAC2C831EA4009A6FF9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				D4EFAB9D2C82D28A009A6FF9 /* UserProfile.swift */,
 				D485DA4C2C81F13500A8033E /* Assets.xcassets */,
 				D485DA4E2C81F13500A8033E /* Preview Content */,
+				D4EFABAA2C831B93009A6FF9 /* Hero.swift */,
+				D4EFABAC2C831EA4009A6FF9 /* ColorExtension.swift */,
 			);
 			path = "Little Lemon";
 			sourceTree = "<group>";
@@ -164,9 +170,11 @@
 				D4EFAB982C82B3F0009A6FF9 /* Onboarding.swift in Sources */,
 				D4EFAB9A2C82CCB2009A6FF9 /* Home.swift in Sources */,
 				D4EFABA42C82E3A9009A6FF9 /* MenuList.swift in Sources */,
+				D4EFABAD2C831EA4009A6FF9 /* ColorExtension.swift in Sources */,
 				D4EFAB9E2C82D28A009A6FF9 /* UserProfile.swift in Sources */,
 				D4EFABA12C82E2C3009A6FF9 /* Persistence.swift in Sources */,
 				D4EFABA92C82E8A2009A6FF9 /* ExampleDatabase.xcdatamodeld in Sources */,
+				D4EFABAB2C831B93009A6FF9 /* Hero.swift in Sources */,
 				D4EFAB9C2C82CD5D009A6FF9 /* Menu.swift in Sources */,
 				D4EFABA62C82E405009A6FF9 /* MenuItem.swift in Sources */,
 				D4EFABA22C82E2C3009A6FF9 /* FetchedObjects.swift in Sources */,

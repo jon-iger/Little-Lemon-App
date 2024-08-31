@@ -21,10 +21,12 @@ struct Onboarding: View {
     var body: some View {
         NavigationView {
             VStack {
+                Hero()
+                    .frame(alignment: .top)
                 NavigationLink(destination: Home(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
-                .onAppear{
+                .onAppear {
                     let boolValue = UserDefaults.standard.value(forKey: kIsLoggedIn)
                     if let boolValue = boolValue as? Bool {
                         if boolValue {
@@ -35,12 +37,24 @@ struct Onboarding: View {
                 TextField(text: $firstName) {
                     Text("First Name")
                 }
+                .font(.footnote)
+                .padding(5)
+                .border(Color.gray)
+                .padding()
                 TextField(text: $lastName) {
                     Text("Last Name")
                 }
+                .font(.footnote)
+                .padding(5)
+                .border(Color.gray)
+                .padding()
                 TextField(text: $email) {
                     Text("Email")
                 }
+                .font(.footnote)
+                .padding(5)
+                .border(Color.gray)
+                .padding()
                 Button("Register") {
                     if !(firstName.isEmpty && lastName.isEmpty && email.isEmpty) {
                         UserDefaults.standard.set(firstName, forKey: kFirstName)
@@ -49,6 +63,11 @@ struct Onboarding: View {
                         UserDefaults.standard.setValue(true, forKey: kIsLoggedIn)
                         isLoggedIn = true
                     }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Image("logo")
                 }
             }
         }
