@@ -52,16 +52,37 @@ struct UserProfile: View {
                 .padding()
                 Spacer()
             }
+            HStack {
+                Text("First Name")
+                    .font(.subheadline)
+                    .frame(alignment: .leading)
+                    .padding(.leading)
+                Spacer()
+            }
             TextField("\(firstName ?? "First Name")", text: $changeFirstName)
                 .font(.footnote)
                 .padding(5)
                 .border(Color.gray)
                 .padding()
+            HStack {
+                Text("Last Name")
+                    .font(.subheadline)
+                    .frame(alignment: .leading)
+                    .padding(.leading)
+                Spacer()
+            }
             TextField("\(lastName ?? "Last Name")", text: $changeLastName)
                 .font(.footnote)
                 .padding(5)
                 .border(Color.gray)
                 .padding()
+            HStack {
+                Text("Email Address")
+                    .font(.subheadline)
+                    .frame(alignment: .leading)
+                    .padding(.leading)
+                Spacer()
+            }
             TextField("\(email ?? "Email Address")", text: $changeEmail)
                 .font(.footnote)
                 .padding(5)
@@ -81,7 +102,7 @@ struct UserProfile: View {
             
             HStack {
                 Button("Discard Changes") {
-                    
+                    discardChanges()
                 }
                 .padding(10)
                 .fontDesign(.serif)
@@ -89,7 +110,7 @@ struct UserProfile: View {
                 .border(Color(hex: "495E57"))
                 .padding()
                 Button("Save Changes") {
-                    
+                    saveChanges()
                 }
                 .padding(10)
                 .fontDesign(.serif)

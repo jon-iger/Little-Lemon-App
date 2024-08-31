@@ -22,7 +22,6 @@ struct Onboarding: View {
         NavigationView {
             VStack {
                 Hero()
-                    .frame(alignment: .top)
                 NavigationLink(destination: Home(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
@@ -64,10 +63,23 @@ struct Onboarding: View {
                         isLoggedIn = true
                     }
                 }
+                .padding(10)
+                .fontDesign(.serif)
+                .background(Color(hex: "F4CE14"))
+                .foregroundColor(Color(hex: "495E57"))
+                .border(Color(hex: "495E57"))
+                .padding()
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Image("logo")
+                    
+                }
+                ToolbarItem(placement: .automatic) {
+                    Image("profile-image-placeholder")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
                 }
             }
         }

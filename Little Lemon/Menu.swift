@@ -12,18 +12,53 @@ struct Menu: View {
     @State var searchText: String = ""
     var body: some View {
         VStack{
-            Text("Little Lemon")
-            Text("Chicago")
-            Text("Ordering App")
+            Spacer()
+            Hero()
+            Text("Order Here!")
+                .font(.title3)
+                .padding(3)
             TextField("Search text", text: $searchText)
+                .padding(7)
+                .border(Color.gray)
+                .padding()
             FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) {
                 (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         HStack {
-                            Text("title: \(dish.title) price \(dish.price)")
-                            AsyncImage(url: URL(string: dish.image!))
-                                .frame(width: 150, height: 150)
+                            if let title = dish.title {
+                                if let price = dish.price {
+                                    if let image = dish.image {
+                                        Text("Name: \(title) Price: $\(price)")
+                                        Spacer()
+                                        AsyncImage(url: URL(string: image)) { phase in
+                                            switch phase {
+                                            case .empty:
+                                                ProgressView()
+                                                    .frame(width: 90, height: 90)
+                                                
+                                            case .success(let image):
+                                                image
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: 90, height: 90)
+                                                    .clipped()
+                                                
+                                            case .failure:
+                                                Image(systemName: "exclamationmark.triangle.fill")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: 90, height: 90)
+                                                    .foregroundColor(.red)
+                                                
+                                            @unknown default:
+                                                EmptyView()
+                                            }
+                                        }
+                                        .frame(width: 90, height: 90)
+                                    }
+                                }
+                            }
                         }
                     }
                 }

@@ -13,11 +13,25 @@ struct Home: View {
     var persistence: PersistenceController = PersistenceController.shared
     
     var body: some View {
-        TabView {
-            Menu()
-                .environment(\.managedObjectContext, persistence.container.viewContext)
-                .tabItem { Label("Menu", systemImage: "list.dash") }
-            UserProfile().tabItem { Label("Profile", systemImage: "square.and.pencil") }
+            ZStack {
+                Color.white.edgesIgnoringSafeArea(.all)
+                TabView {
+                    Menu()
+                        .environment(\.managedObjectContext, persistence.container.viewContext)
+                        .tabItem { Label("Menu", systemImage: "list.dash") }
+                    UserProfile().tabItem { Label("Profile", systemImage: "square.and.pencil") }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Image("logo")
+                    }
+                    ToolbarItem(placement: .automatic) {
+                        Image("profile-image-placeholder")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                    }
+                }
         }
         .navigationBarBackButtonHidden(true)
     }
